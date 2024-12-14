@@ -1,0 +1,58 @@
+﻿@model List<PriceList>
+
+
+	<dive class="row mb-3">
+		<div class="col-6">
+			<h1>
+				PriceList
+			</h1>
+		</div>
+
+		<div class="col-6">
+			<a class="btn btn-primary" asp-controller = "PriceList" asp-action="Create">
+				Add new Pricelist
+			</a>
+		</div>
+	</dive>
+
+
+
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>
+				Item
+			</th>
+			<th>
+				Amount
+			</th>
+			<th>
+				Brand
+			</th>
+			<th>
+				Extended Price
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var obj in Model)
+		{
+			<tr>
+				<td>
+					@obj.Item
+				</td>
+				<td>
+					@obj.Amount
+				</td>
+				<td>
+					@obj.Brand
+				</td>
+				<td>
+					@obj.ExtendedPrice
+				</td>
+			</tr>	
+		
+		}
+
+	</tbody>
+</table>
